@@ -1,0 +1,27 @@
+<h1>Ticket#index</h1>
+<p>Find me in app/views/ticket/index.html.erb</p>
+
+<h1>Listing users</h1>
+<table>
+  <tr>
+    <th>title</th>
+    <th>ticket no</th>
+    <th>category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.title %></td>
+        <td><%= ticket.ticket_no %></td>
+        <td><%= ticket.categoty %></td>
+        <td><%= link to 'Show', ticket %></td>
+        <td><%= link to 'Edit', edit ticket path(ticket) %></td>
+        <td><%= link to 'Destroy', ticket, confirm: 'Are you sure?',
+                        method: :delete %></td>
+      </tr>
+  <% end %>
+</table>
+<br />
+<%= link to 'New User', new ticket path %>
